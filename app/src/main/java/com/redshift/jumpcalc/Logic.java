@@ -11,10 +11,10 @@ public class Logic {
     //TODO: randomness factor?
     static final float DELAYBASE = FSD_SUM + REFUELBASE + ESCAPEROUTE;
 
-    public void calc(float distance, Ship ship1, Ship ship2) {
+    public void calc(float distance, int jumpscount, Ship ship1, Ship ship2) {
 
-        ship1.routeTime = (int) (DELAYBASE * (distance / ship1.range));
-        ship2.routeTime = (int) (DELAYBASE * (distance / ship2.range));
+        ship1.routeTime = (int) (jumpscount * DELAYBASE * distance / ship1.range);
+        ship2.routeTime = (int) (jumpscount * DELAYBASE * distance / ship2.range);
 
     }
 }

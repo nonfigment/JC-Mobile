@@ -17,6 +17,10 @@ public class Input {
         ship.range = readFloat(" Enter " + ship.name + " current LY range:");
     }
 
+    public int readJumpsCount() {
+        return readInt(" Enter the number of jumps according to galaxy map route builder");
+    }
+
     public float readDistance() {
         return readFloat(" Enter the distance between ships according to galaxy map route builder: ");
     }
@@ -28,10 +32,22 @@ public class Input {
             confirm();
             return readLine;
         } catch (Exception e) {
-            String error = "Error! Please, check the data you've provided";
-            System.out.println(error);
+            error();
         }
         return readString(description);
+    }
+
+    private int readInt(String description) {
+        try {
+            System.out.println(description);
+            String readLine = bufferedReader.readLine();
+            int readInt = Integer.parseInt(readLine);
+            confirm();
+            return readInt;
+        } catch (Exception e) {
+            error();
+        }
+        return readInt(description);
     }
 
     private float readFloat(String description) {
@@ -42,8 +58,7 @@ public class Input {
             confirm();
             return readFloat;
         } catch (Exception e) {
-            String error = "Error! Please, check the data you've provided";
-            System.out.println(error);
+            error();
         }
         return readFloat(description);
     }
@@ -51,6 +66,11 @@ public class Input {
     public void confirm() {
         String c = ">>Confirmed";
         System.out.println(c);
+    }
+
+    public void error() {
+        String e = "Error! Please, check the data you've provided";
+        System.out.println(e);
     }
 
 }

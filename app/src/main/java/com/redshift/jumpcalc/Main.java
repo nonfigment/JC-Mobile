@@ -12,6 +12,7 @@ public class Main {
         Ship ship2 = new Ship();
 
         float distance;
+        int jumpscount;
 
         Input inputManager = new Input();
 
@@ -22,9 +23,10 @@ public class Main {
         inputManager.readShipParams(ship2);
 
         distance = inputManager.readDistance();
+        jumpscount = inputManager.readJumpsCount();
 
         Logic logic = new Logic();
-        logic.calc(distance, ship1, ship2);
+        logic.calc(distance, jumpscount, ship1, ship2);
 
         System.out.printf("%s route time: %s%n", ship1.name, Util.timeFormatter(ship1.routeTime));
         System.out.printf("%s route time: %s%n", ship2.name, Util.timeFormatter(ship2.routeTime));
