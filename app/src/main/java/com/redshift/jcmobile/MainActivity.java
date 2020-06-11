@@ -1,18 +1,16 @@
 package com.redshift.jcmobile;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.redshift.jumpcalc.Logic;
 import com.redshift.jumpcalc.Ship;
-import com.redshift.jumpcalc.Util;
-
-import static java.lang.Float.parseFloat;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,7 +19,10 @@ public class MainActivity extends AppCompatActivity {
     private EditText shipRangeEdit;
     private EditText ship2RangeEdit;
     private EditText distanceEdit;
+    private EditText jumpsCountEdit;
     private Button submitButton;
+
+    private final static String TAG = MainActivity.class.getSimpleName();
 
 
     @Override
@@ -34,35 +35,36 @@ public class MainActivity extends AppCompatActivity {
         shipRangeEdit = findViewById(R.id.mainShipRangeEditText);
         ship2RangeEdit = findViewById(R.id.mainShip2RangeEditText);
         distanceEdit = findViewById(R.id.mainDistanceEditTextNumber2);
+        jumpsCountEdit = findViewById(R.id.mainJumpsCountEditTextNumber);
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                processClick();
+                try {
+                    processClick();
+                } catch (Exception e) {
+                    Log.e(TAG, "submitButton click process error", e);
+                    Toast.makeText(MainActivity.this, "Error!", Toast.LENGTH_LONG).show();
+                }
             }
         });
     }
 
 
-
     private void processClick() {
+        Log.d(TAG, "Start process");
 
         Ship ship1 = new Ship();
+        ship1.name = Util.getString(shipNameEdit);
+        ship1.range = Util.getFloat(shipRangeEdit, 1);
+
         Ship ship2 = new Ship();
+        ship2.name = Util.getString(ship2NameEdit);
+        ship2.range = Util.getFloat(ship2RangeEdit, 1);
 
-        float distance;
-
-        ship1.name = shipNameEdit.getText().toString();
-        ship1.range = parseFloat(ship2RangeEdit.getText().toString());
-        ship2.name = shipNameEdit.getText().toString();
-        ship2.range = parseFloat(ship2RangeEdit.getText().toString());
-        distance = parseFloat(distanceEdit, getText().toString());
+        float distance = Util.getFloat(distanceEdit, 1);
+        int jumpscount = Util.getInt(jumpsCountEdit);
 
         Logic logic = new Logic();
-        logic.calc(distance, ship1, ship2);
-
-        System.out.printf("%s route time: %s%n", ship1.name, Util.timeFormatter(ship1.routeTime));
-        System.out.printf("%s route time: %s%n", ship2.name, Util.timeFormatter(ship2.routeTime));
-
-
+        logic.calc(distance, jumpscount, ship1, ship2);
     }
 }

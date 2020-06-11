@@ -2,9 +2,9 @@ package com.redshift.jumpcalc;
 
 public class Ship {
 
-    String name;
-    float range;
-    int routeTime;
-    boolean hasmodifiers;
+    public String name;
+    public float range;
+    public int routeTime;
+    public boolean hasmodifiers;
 
 }

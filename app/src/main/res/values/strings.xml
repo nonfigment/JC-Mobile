@@ -2,14 +2,10 @@
     <string name="app_name">JC Mobile</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="Submit">button_submit</string>
+    <string name="Enter_parameters_screen"> Enter parameters</string>
+    <string name="Submit">Submit</string>
     <string name="Enter_value">input_value</string>
     <string name="welcome">Welcome!</string>
     <string name="first_section">First ship parameters</string>
@@ -19,4 +15,7 @@
     <string name="input_ly">Ship range in LY</string>
     <string name="clear">Clear</string>
     <string name="input_ship_name">Ship callsign / class</string>
+    <string name="input_jumps_count">Jumps count</string>
+    <string name="add_randomize">Add random factor</string>
+    <string name="save_results">Save results</string>
 </resources>
