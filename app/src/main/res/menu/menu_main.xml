@@ -10,4 +10,5 @@
     <item
         android:icon="@android:drawable/ic_menu_close_clear_cancel"
         android:title="@string/clear" />
+    <item android:title="Item" />
 </menu>

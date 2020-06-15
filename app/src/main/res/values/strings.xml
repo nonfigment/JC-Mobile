@@ -2,6 +2,10 @@
     <string name="app_name">JC Mobile</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
+    <string name="welcomeText">"Welcome to JumpCalc Mobile!"</string>
+    <string name="welcomeTextP1">"This is an simple app, designed for assist in planning your co-op route in the Elite: Dangerous." </string>
+    <string name="welcomeTextP2">"JumpCalc calculates the amount of time for each of your team ship to get to the specified destination." </string>
+    <string name="welcomeTextP3">"You'll need to know your and your team member's ship LY range, the distance between route start and end points, and the total number of jumps. All these parameters you can get in Galaxy Map View in Elite:Dangerous "</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
     <string name="Enter_parameters_screen"> Enter parameters</string>
@@ -18,4 +22,5 @@
     <string name="input_jumps_count">Jumps count</string>
     <string name="add_randomize">Add random factor</string>
     <string name="save_results">Save results</string>
+    <string name="ed_logo">ED Logo</string>
 </resources>
