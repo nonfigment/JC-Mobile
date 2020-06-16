@@ -3,12 +3,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.redshift.jcmobile.MainActivity">
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="102"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
+            android:id="@+id/action_settings"
+            android:orderInCategory="102"
+            android:title="@string/action_settings"
+            app:showAsAction="never" />
     <item
-        android:icon="@android:drawable/ic_menu_close_clear_cancel"
-        android:title="@string/clear" />
-    <item android:title="Item" />
+            android:id="@+id/mainMenuShowWSBtn"
+            android:checkable="false"
+            android:title="@string/menuShowWS" />
+    <item
+            android:id="@+id/mainMenuLTVBtn"
+            android:title="@string/mainMenyLTVBtn" />
+    <item
+            android:id="@+id/mainMenuClearBtn"
+            android:icon="@android:drawable/ic_menu_rotate"
+            android:title="@string/clear"
+            android:visible="true" />
 </menu>

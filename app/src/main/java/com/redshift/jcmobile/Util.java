@@ -23,4 +23,8 @@ public class Util {
         if (input.equals("")) input = "0";
         return Integer.parseInt(input);
     }
+
+//    public static void loadTestValues () {
+//        EditText editText = new EditText().setText(MainActivity.);
+//    }
 }
