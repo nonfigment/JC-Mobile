@@ -34,4 +34,7 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="RS_header">Calculation Results</string>
     <string name="RSfirstShipName">First ship</string>
+    <string name="ws_btn_start">Start tutorial</string>
+    <string name="ws_btn_continue_1">Continue</string>
+    <string name="ws_ok_btn">"Ok, go! "</string>
 </resources>

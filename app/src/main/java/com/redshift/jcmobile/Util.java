@@ -5,7 +5,7 @@ import android.widget.EditText;
 import org.jetbrains.annotations.NotNull;
 
 public class Util {
-
+    protected final static String TAG = MainActivity.class.getSimpleName();
     public static float getFloat(@NotNull EditText text, float defaultValue) {
         String input = text.getText().toString();
         if (input.equals("")) return defaultValue;
