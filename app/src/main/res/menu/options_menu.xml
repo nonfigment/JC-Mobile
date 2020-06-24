@@ -19,4 +19,5 @@
             android:icon="@android:drawable/ic_menu_rotate"
             android:title="@string/clear"
             android:visible="true" />
+
 </menu>

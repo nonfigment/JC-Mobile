@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.redshift.jcmobile.tutorial.WelcomeScreen;
 import com.redshift.jumpcalc.Logic;
 import com.redshift.jumpcalc.Ship;
 
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_main, menu);
+        inflater.inflate(R.menu.options_menu, menu);
         return true;
     }
 

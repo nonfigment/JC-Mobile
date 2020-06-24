@@ -1,3 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/nav" />
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/nav"
+        app:startDestination="@id/mainActivity">
+    <activity
+            android:id="@+id/mainActivity"
+            android:name="com.redshift.jcmobile.MainActivity"
+            android:label="MainActivity" >
+        <action
+                android:id="@+id/action_mainActivity_to_resultScreen"
+                app:destination="@id/resultScreen"
+                app:enterAnim="@anim/nav_default_enter_anim"
+                app:exitAnim="@anim/fragment_close_enter" />
+    </activity>
+    <fragment
+            android:id="@+id/welcomeFragment1"
+            android:name="com.redshift.jcmobile.tutorial.WelcomeFragment1"
+            android:label="WelcomeFragment1" >
+        <action
+                android:id="@+id/action_welcomeFragment1_to_welcomeFragment2"
+                app:destination="@id/welcomeFragment2" />
+    </fragment>
+    <fragment
+            android:id="@+id/welcomeFragment2"
+            android:name="com.redshift.jcmobile.tutorial.WelcomeFragment2"
+            android:label="WelcomeFragment2" >
+        <action
+                android:id="@+id/action_welcomeFragment2_to_welcomeFragment3"
+                app:destination="@id/welcomeFragment3" />
+    </fragment>
+    <fragment
+            android:id="@+id/welcomeFragment3"
+            android:name="com.redshift.jcmobile.tutorial.WelcomeFragment3"
+            android:label="WelcomeFragment3" >
+        <action
+                android:id="@+id/action_welcomeFragment3_to_mainActivity"
+                app:destination="@id/mainActivity" />
+    </fragment>
+    <activity
+            android:id="@+id/resultScreen"
+            android:name="com.redshift.jcmobile.ResultScreen"
+            android:label="activity_result_screen"
+            tools:layout="@layout/activity_result_screen" />
+    <activity
+            android:id="@+id/welcomeScreen2"
+            android:name="com.redshift.jcmobile.tutorial.WelcomeScreen"
+            android:label="activity_welcome_screen"
+            tools:layout="@layout/activity_welcome_screen" >
+        <action
+                android:id="@+id/action_welcomeScreen2_to_welcomeFragment1"
+                app:destination="@id/welcomeFragment1" />
+    </activity>
+</navigation>
