@@ -15,6 +15,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.redshift.jcmobile.tutorial.WelcomeScreen;
+import com.redshift.jumpcalc.DataStorage;
 import com.redshift.jumpcalc.Logic;
 import com.redshift.jumpcalc.Ship;
 
@@ -55,8 +56,6 @@ public class MainActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-
-
 
 
     @Override
@@ -108,23 +107,21 @@ public class MainActivity extends AppCompatActivity {
         ship2.name = Util.getString(ship2NameEdit);
         ship2.range = Util.getFloat(ship2RangeEdit, 1);
 
-        float distance = Util.getFloat(distanceEdit, 1);
-        int jumpscount = Util.getInt(jumpsCountEdit);
+        JCApp.shipStorage.ship1 = ship1;
+        JCApp.shipStorage.ship2 = ship2;
+
+        DataStorage.setDistance(Util.getFloat(distanceEdit, 1));
+        DataStorage.setJumpscount(Util.getInt(jumpsCountEdit));
 
         Logic logic = new Logic();
-        logic.calc(distance, jumpscount, ship1, ship2);
+        logic.calc(DataStorage.getDistance(), DataStorage.getJumpscount(), ship1, ship2);
         Intent showResultsScreen = new Intent(this, ResultScreen.class);
         startActivity(showResultsScreen);
-     //   new resultOutput();
     }
-/*
-    private String resultOutput()  {
-        System.out.printf("%s route time: %s%n", ship1.name, com.redshift.jumpcalc.Util.timeFormatter(ship1.routeTime));
-        System.out.printf("%s route time: %s%n", ship2.name, com.redshift.jumpcalc.Util.timeFormatter(ship2.routeTime));
-    }
-*/
+
 
     protected void loadTestValues() {
+        Log.d(TAG, "Loaded test values");
         shipNameEdit.setText("First ship");
         ship2NameEdit.setText("Second Ship");
         ship2RangeEdit.setText("12");
@@ -132,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
         distanceEdit.setText("100");
         jumpsCountEdit.setText("33");
     }
+
     private void clear() {
         Log.d(TAG, "Cleared");
         ship2RangeEdit.getText().clear();
@@ -143,4 +141,5 @@ public class MainActivity extends AppCompatActivity {
         jumpsCountEdit.getText().clear();
 
     }
+
 }

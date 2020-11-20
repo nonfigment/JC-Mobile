@@ -11,11 +11,11 @@ public class Util {
         int hours = minutes / 60;
         minutes = minutes % 60;
         if (hours < 24) {
-            return String.format("%02d:%02d:%02d", hours, minutes, sec);
+            return String.format("%02d h %02d m %02d s", hours, minutes, sec);
         }
 
         int days = hours / 24;
         hours = hours % 24;
-        return String.format("%d d %02d:%02d:%02d", days, hours, minutes, sec);
+        return String.format("%d d %02d h %02d m %02d s", days, hours, minutes, sec);
     }
 }

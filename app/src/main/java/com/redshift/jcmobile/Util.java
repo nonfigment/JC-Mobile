@@ -2,11 +2,11 @@ package com.redshift.jcmobile;
 
 import android.widget.EditText;
 
-import org.jetbrains.annotations.NotNull;
+import androidx.annotation.NonNull;
 
 public class Util {
     protected final static String TAG = MainActivity.class.getSimpleName();
-    public static float getFloat(@NotNull EditText text, float defaultValue) {
+    public static float getFloat(@NonNull EditText text, float defaultValue) {
         String input = text.getText().toString();
         if (input.equals("")) return defaultValue;
 
@@ -14,11 +14,11 @@ public class Util {
         return Float.parseFloat(input);
     }
 
-    public static String getString(@NotNull EditText text) {
+    public static String getString(@NonNull EditText text) {
         return text.getText().toString();
     }
 
-    public static int getInt(@NotNull EditText text) {
+    public static int getInt(@NonNull EditText text) {
         String input = text.getText().toString();
         if (input.equals("")) input = "0";
         return Integer.parseInt(input);
